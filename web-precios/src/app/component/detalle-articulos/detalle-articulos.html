@@ -1,1 +1,8 @@
-<p>detalle-articulos works!</p>
+<p>detalle-alumnos works!</p>
+
+@if(articulo() != null ){
+    <h1>alumno {{articulo()!.toString()}}</h1>
+    <h1>alumno {{articulo()!.legajo}}</h1>
+}@else {
+    <p>nada que mostrar!</p>
+}

@@ -1,1 +1,15 @@
-<p>home works!</p>
+<section class="container">
+
+    <h1>Articulos</h1>
+    <hr />
+    
+    <!-- aca le mandas la variable con los datos, esto solo sirve para mandar variables/informacion entre componentes-->
+    <app-listado-articulos   [listadoHijo]="listado"  (envioDeArticulo)="verdetalleFinal($event)"></app-listado-articulos>
+
+    <hr />
+
+    <app-agregar-articulos (envioArticulo)="this.agregar($event)"></app-agregar-articulos>
+
+    <app-detalle-articulos [articulo]="articulo"></app-detalle-articulos> 
+
+</section>

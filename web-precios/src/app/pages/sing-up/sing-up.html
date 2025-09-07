@@ -1,1 +1,134 @@
-<p>sing-up works!</p>
+<div class="container registro-container">
+  <div class="row shadow-lg rounded overflow-hidden">
+    <!-- Panel izquierdo -->
+    <div class="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light p-5 text-center">
+      <h1 class="fw-bold">Regístrate</h1>
+      <p class="text-muted">
+        Únete a nuestra sala de juegos y comienza la diversión.
+      </p>
+    </div>
+
+    <!-- Panel derecho -->
+    <div class="col-md-6 bg-dark text-white p-5">
+      <form action="#" method="POST" class="register-form" [formGroup]="formulario" >
+
+        <div class="mb-3">
+          <label for="full-name" class="form-label">Nombre</label>
+
+
+          <input type="text" id="full-name" name="full-name" class="form-control" formControlName="nombre">
+
+
+
+          @if(formulario.controls.nombre.errors?.["required"] && formulario.controls.nombre.touched){
+          <small class="error">El campo nombre es requerido</small>
+          } @if(formulario.controls.nombre.errors?.["minlength"] && formulario.controls.nombre.touched){
+          <small class="error">El largo minimo es de {{ formulario.controls.nombre.errors?.["minlength"].requiredLength
+            }}</small>
+          }
+
+        </div>
+
+        <div class="mb-3">
+          <label for="full-name" class="form-label">Apellido</label>
+          <input type="text" id="full-name" name="full-name" class="form-control" formControlName="apellido">
+
+          @if(formulario.controls.apellido.errors?.["required"] && formulario.controls.apellido.touched){
+          <small class="error">El campo apellido es requerido</small>
+          } @if(formulario.controls.apellido.errors?.["minlength"] && formulario.controls.apellido.touched){
+          <small class="error">El largo minimo es de {{
+            formulario.controls.apellido.errors?.["minlength"].requiredLength
+            }}</small>
+          }
+
+        </div>
+
+        <div class="mb-3">
+          <label for="full-name" class="form-label">Edad</label>
+          <input type="text" id="full-name" name="full-name" class="form-control" formControlName="edad">
+
+          @if(formulario.controls.edad.errors?.["required"] && formulario.controls.edad.touched){
+          <small class="error">El campo edad es requerido</small>
+          } @if(formulario.controls.edad.errors?.["pattern"] && formulario.controls.edad.touched){
+          <small class="error">La edad debe ser un numero</small>
+          }
+
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" id="email" name="email" class="form-control" formControlName="correo">
+
+          @if(formulario.controls.correo.errors?.["required"] && formulario.controls.correo.touched){
+          <small class="error">El campo correo es requerido</small>
+          } @if(formulario.controls.correo.errors?.["pattern"] && formulario.controls.correo.touched){
+          <small class="error">El largo minimo es de {{ formulario.controls.correo.errors?.["minlength"].requiredLength
+            }}</small>
+          }
+
+        </div>
+
+
+        <div class="mb-3">
+          <label for="username" class="form-label">Documento</label>
+
+          <input type="text" id="username" name="username" class="form-control" formControlName="dni">
+
+          @if(formulario.controls.dni.errors?.["required"] && formulario.controls.dni.touched){
+          <small class="error">El campo dni es requerido</small>
+          } @if(formulario.controls.dni.errors?.["minlength"] && formulario.controls.dni.touched){
+          <small class="error">El largo minimo es de {{ formulario.controls.dni.errors?.["minlength"].requiredLength
+            }}</small>
+          }@if(formulario.controls.dni.errors?.["pattern"] && formulario.controls.dni.touched){
+          <small class="error">El dni debe ser un numero</small>
+          }
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+
+          <input type="password" id="contrasenia" name="contrasenia" class="form-control" formControlName="contrasenia">
+
+          @if(formulario.controls.contrasenia.errors?.["required"] && formulario.controls.contrasenia.touched){
+          <small class="error">El campo contrasenia es requerido</small>
+          } @if(formulario.controls.contrasenia.errors?.["minlength"] && formulario.controls.contrasenia.touched){
+          <small class="error">El largo minimo es de {{
+            formulario.controls.contrasenia.errors?.["minlength"].requiredLength
+            }}</small>
+          }
+
+        </div>
+
+        <div class="mb-3">
+          <label for="confirm-password" class="form-label">Repetir contraseña</label>
+          <input type="password" id="repetirContrasenia" name="repetirContrasenia" class="form-control"
+            formControlName="repetirContrasenia">
+
+          @if(formulario.controls.contrasenia.errors?.["validarContrasenias"] && formulario.controls.contrasenia.touched){
+          <small class="error">No coinciden las claves</small>
+          }
+
+        </div>
+
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary" routerLink="" [disabled]="!this.formulario.valid"
+            >Registrar</button>
+          <!-- <button type="button" class="btn btn-outline-light" routerLink="/Login">Iniciar sesión</button> -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
