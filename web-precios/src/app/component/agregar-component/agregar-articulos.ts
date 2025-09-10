@@ -1,6 +1,6 @@
 import { Component, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Articulos } from '../../classes/articulos';
+import { Articulo } from '../../classes/articulo';
 
 @Component({
   selector: 'app-agregar-articulos',
@@ -15,11 +15,11 @@ export class AgregarArticulos {
   legajo:number = 0;
 
 
-  envioArticulo = output<Articulos>();
+  envioArticulo = output<Articulo>();
 
   agregar(){
     //envia al padre el elemento de agregar
-    const persona =  new Articulos(this.legajo,this.nombre,this.apellido);
+    const persona =  new Articulo(this.legajo,this.nombre,this.apellido);
     console.log(persona);
     this.envioArticulo.emit(persona)
   }

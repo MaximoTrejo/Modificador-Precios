@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { Articulos } from '../../classes/articulos';
+import { Articulo } from '../../classes/articulo';
 
 @Component({
   selector: 'app-detalle-articulos',
@@ -9,5 +9,5 @@ import { Articulos } from '../../classes/articulos';
 })
 export class DetalleArticulos {
 
-  articulo = input<Articulos | null>(null)
+  articulo = input<Articulo | null>(null)
 }

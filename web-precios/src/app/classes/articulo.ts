@@ -1,4 +1,4 @@
-export class Articulos {
+export class Articulo {
 
     legajo: number = 0;
   nombre: string = '';

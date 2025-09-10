@@ -1,5 +1,5 @@
 import { Component, input, output } from '@angular/core';
-import { Articulos } from '../../classes/articulos';
+import { Articulo } from '../../classes/articulo';
 
 @Component({
   selector: 'app-listado-articulos',
@@ -10,10 +10,10 @@ import { Articulos } from '../../classes/articulos';
 export class ListadoArticulos {
 
 
-listadoHijo = input <Articulos[]>([]); 
- envioDeArticulo = output<Articulos>();
+listadoHijo = input <Articulo[]>([]); 
+ envioDeArticulo = output<Articulo>();
 
-  verDetalle(alumno: Articulos) {
+  verDetalle(alumno: Articulo) {
     this.envioDeArticulo.emit(alumno);
   }
 
